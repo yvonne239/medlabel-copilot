@@ -34,3 +34,7 @@ The language benchmark uses 38 handcrafted test cases, separate from the 20 exam
 | [MedLabel_DailyMed_OTC_Dataset.csv](MedLabel_DailyMed_OTC_Dataset.csv) | A catalog of 17 exact formulations with ingredients, selected warnings, and label provenance |
 
 The catalog uses versioned Structured Product Labels from the [U.S. National Library of Medicine's DailyMed service](https://dailymed.nlm.nih.gov/dailymed/app-support-web-services.cfm). This educational prototype covers selected checks for seven adult symptoms. Use fictional examples. For questions about a real medicine, consult the full product label and a pharmacist or clinician.
+
+**[Try the live demo](https://medlabel-copilot-demo.coolsage20.chatgpt.site/)**
+
+Pick **Shared ingredient**, then click **Confirm details** to see how the chatbot compares OTC medicine labels.
