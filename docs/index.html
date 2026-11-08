@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f5ef">
+  <meta name="description" content="Try an interactive demo for comparing exact over-the-counter drug labels.">
+  <title>MedLabel Copilot | Interactive Demo</title>
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#demo">Skip to demo</a>
+  <header class="top">
+    <div class="shell top-inner">
+      <a class="brand" href="./" aria-label="MedLabel Copilot home"><img src="./mark.svg" alt="" width="37" height="37"><span>MedLabel <strong>Copilot</strong></span></a>
+      <nav aria-label="Project navigation">
+        <a href="#method">How it works</a>
+        <a class="source-link" href="https://github.com/yvonne239/medlabel-copilot" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="headline">
+      <div>
+        <p class="eyebrow"><span></span> INTERACTIVE PORTFOLIO DEMO</p>
+        <h1 id="headline">Compare OTC labels.<br><em>See the evidence.</em></h1>
+        <p class="intro">Try a sample case to see how a symptom, an exact medicine, or a health factor changes the findings in a label comparison.</p>
+      </div>
+      <dl class="hero-data" aria-label="Demo coverage">
+        <div><dt>Label catalog</dt><dd>17 <small>formulations</small></dd></div>
+        <div><dt>Symptom scope</dt><dd>7 <small>categories</small></dd></div>
+        <div><dt>Label source</dt><dd class="source-name">DailyMed <small>· NLM</small></dd></div>
+      </dl>
+    </section>
+
+    <section id="demo" class="workspace" aria-label="Try MedLabel Copilot">
+      <aside class="scenarios">
+        <p class="section-kicker">START HERE</p>
+        <h2>Pick a sample case</h2>
+        <p class="scenario-intro">Each case highlights a different part of the comparison.</p>
+        <div class="case-list" id="case-list">
+          <button type="button" class="case" data-case="overlap" disabled>
+            <span class="case-number">01</span><span><strong>Shared ingredient</strong><small>Compare cough product labels.</small></span><span class="case-arrow" aria-hidden="true">→</span>
+          </button>
+          <button type="button" class="case" data-case="ambiguous" disabled>
+            <span class="case-number">02</span><span><strong>Ambiguous brand name</strong><small>Confirm which package was used.</small></span><span class="case-arrow" aria-hidden="true">→</span>
+          </button>
+          <button type="button" class="case" data-case="warning" disabled>
+            <span class="case-number">03</span><span><strong>Precise label wording</strong><small>Compare health-factor findings.</small></span><span class="case-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <div class="scope"><strong>Demo scope</strong><p>Use sample details. The comparison covers selected warnings and ingredient overlaps. Consult a pharmacist or clinician for questions about real medicines.</p></div>
+      </aside>
+
+      <div class="chat">
+        <header class="chat-head">
+          <div class="chat-title"><img src="./mark.svg" alt="" width="32" height="32"><div><h2>MedLabel Copilot</h2><p id="engine-status" role="status">Loading chat engine…</p></div></div>
+          <button id="reset" type="button" class="reset" disabled><span aria-hidden="true">↺</span> New case</button>
+        </header>
+        <div id="transcript" class="transcript" role="log" aria-live="polite" aria-relevant="additions text">
+          <article class="bubble bot"><span class="speaker">MEDLABEL</span><p>Choose a sample case or type a question. I’ll confirm the details before comparing labels.</p></article>
+        </div>
+        <div id="choices" class="choices" aria-label="Suggested replies" hidden></div>
+        <form class="composer" id="composer">
+          <label for="message" class="sr-only">Your message</label>
+          <input id="message" name="message" type="text" placeholder="Type a question or reply" autocomplete="off" maxlength="700" disabled>
+          <button type="submit" id="send" disabled>Send <span aria-hidden="true">↑</span></button>
+        </form>
+        <p class="local-note">Messages are processed in this browser.</p>
+      </div>
+
+      <div id="findings" class="findings" tabindex="-1" hidden aria-label="Label comparison results"></div>
+    </section>
+
+    <section id="method" class="method" aria-labelledby="method-heading">
+      <div class="method-intro"><p class="section-kicker">PROJECT NOTES</p><h2 id="method-heading">From message to label</h2></div>
+      <div class="method-grid">
+        <article><h3>01 <span>Confirm the case</span></h3><p>The notebook’s conversation logic extracts supported details, checks exact product names, and asks you to confirm the case.</p></article>
+        <article><h3>02 <span>Trace the comparison</span></h3><p>Each result links to its versioned DailyMed label. The findings show why the same product may be flagged in one case and appear without that flag in another.</p></article>
+        <article><h3>03 <span>Review the evaluation</span></h3><p>This web demo runs the notebook’s TF-IDF baseline in the browser. The notebook also evaluates MiniLM and records 34 scripted checks.</p></article>
+      </div>
+      <div class="method-links">
+        <a href="https://github.com/yvonne239/medlabel-copilot" target="_blank" rel="noopener noreferrer">View project on GitHub <span aria-hidden="true">↗</span></a>
+        <a href="https://dailymed.nlm.nih.gov/dailymed/app-support-web-services.cfm" target="_blank" rel="noopener noreferrer">DailyMed data source <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer"><span>MedLabel Copilot</span><span>Educational prototype · OTC label comparison</span></footer>
+</body>
+</html>
