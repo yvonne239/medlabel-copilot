@@ -1,5 +1,5 @@
 # MedLabel Copilot
-
+**[Try the live demo](https://yvonne239.github.io/medlabel-copilot/)**
 MedLabel Copilot is an interactive notebook for comparing selected information from exact U.S. over-the-counter drug labels. It explores whether semantic matching can recognize everyday descriptions of symptoms while keeping the label comparison traceable to its source.
 
 ## Try the notebook
