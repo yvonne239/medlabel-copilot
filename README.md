@@ -11,6 +11,7 @@ MedLabel Copilot is an interactive notebook for comparing selected information f
 The first run may download a 22 MB model. The notebook embeds the label catalog and uses a TF-IDF fallback if the optional model is unavailable.
 
 **[Try the live demo](https://yvonne239.github.io/medlabel-copilot/)**
+Pick **Shared ingredient**, then click **Confirm details** to see how the chatbot compares OTC medicine labels.
 
 ## How it works
 
